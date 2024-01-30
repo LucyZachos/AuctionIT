@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterBuyer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ques" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ans" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterBuyerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ForgotPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newPass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForgotPasswordResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ques" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ans" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CarBid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buyerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bidAmt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarBidResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SellCar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="make" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startBid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closeDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SellCarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OpenPanel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenPanelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpenPanelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterBuyerSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterBuyer" />
+  </wsdl:message>
+  <wsdl:message name="RegisterBuyerSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterBuyerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarBidSoapIn">
+    <wsdl:part name="parameters" element="tns:CarBid" />
+  </wsdl:message>
+  <wsdl:message name="CarBidSoapOut">
+    <wsdl:part name="parameters" element="tns:CarBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="SellCarSoapIn">
+    <wsdl:part name="parameters" element="tns:SellCar" />
+  </wsdl:message>
+  <wsdl:message name="SellCarSoapOut">
+    <wsdl:part name="parameters" element="tns:SellCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenPanelSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenPanel" />
+  </wsdl:message>
+  <wsdl:message name="OpenPanelSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenPanelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBuyer">
+      <wsdl:input message="tns:RegisterBuyerSoapIn" />
+      <wsdl:output message="tns:RegisterBuyerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input message="tns:ForgotPasswordSoapIn" />
+      <wsdl:output message="tns:ForgotPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input message="tns:UpdateUserSoapIn" />
+      <wsdl:output message="tns:UpdateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarBid">
+      <wsdl:input message="tns:CarBidSoapIn" />
+      <wsdl:output message="tns:CarBidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SellCar">
+      <wsdl:input message="tns:SellCarSoapIn" />
+      <wsdl:output message="tns:SellCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenPanel">
+      <wsdl:input message="tns:OpenPanelSoapIn" />
+      <wsdl:output message="tns:OpenPanelSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBuyer">
+      <soap:operation soapAction="http://tempuri.org/RegisterBuyer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarBid">
+      <soap:operation soapAction="http://tempuri.org/CarBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellCar">
+      <soap:operation soapAction="http://tempuri.org/SellCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenPanel">
+      <soap:operation soapAction="http://tempuri.org/OpenPanel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBuyer">
+      <soap12:operation soapAction="http://tempuri.org/RegisterBuyer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap12:operation soapAction="http://tempuri.org/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarBid">
+      <soap12:operation soapAction="http://tempuri.org/CarBid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellCar">
+      <soap12:operation soapAction="http://tempuri.org/SellCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenPanel">
+      <soap12:operation soapAction="http://tempuri.org/OpenPanel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="https://localhost:44368/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="https://localhost:44368/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
